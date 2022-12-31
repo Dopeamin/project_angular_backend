@@ -6,7 +6,6 @@ export class UpdateGroupChatDTO {
     @IsDefined()
     id: string;
 
-    @IsNotEmpty()
     @IsOptional()
     name?: string;
 

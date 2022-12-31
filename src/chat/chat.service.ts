@@ -307,7 +307,7 @@ export class ChatService extends GenericsService<GroupChat, GroupChat, GroupChat
             .leftJoinAndSelect('gctps.profile', 'profiles')
             .leftJoinAndSelect('gc.lastMessage', 'messages')
             .leftJoinAndSelect('messages.profile', 'p')
-            .orderBy('gc.lastMessage', 'DESC')
+            .orderBy('messages.createdAt', 'DESC')
             .skip((page - 1) * take)
             .take(take)
             .getMany();
